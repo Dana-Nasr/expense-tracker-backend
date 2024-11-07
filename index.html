@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./public/styles.css" rel="stylesheet" />
+    <link href="./public/base/sections.css" rel="stylesheet" />
+    <link href="./public/base/utilities.css" rel="stylesheet" />
+    <link href="./public/base/colors.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="bk-primary flex center">
+      <h2>WELCOME TO OUR EXPANSE TRACKER</h2>
+    </header>
+    <div id="budgetDiv" class="flex row space-around budgetDiv"></div>
+    <div class="flex column wrap space-around">
+      <div class="flex row grow1 transactionContainer wrap">
+        <div class="flex transaction column center bk-primary grow1 enter">
+          <h2>Add Transaction:</h2>
+          <input type="text" id="type" placeholder="income/expense" required />
+          <input type="number" id="amount" placeholder="amount" required />
+          <input type="text" id="notes" placeholder="notes" required />
+          <input type="date" id="date" placeholder="date" required />
+          <button id="submit">enter</button>
+        </div>
+        <div class="flex transaction column center bk-primary grow1">
+          <h2>Add Filters:</h2>
+          <div class="flex row space-between view">
+            <button id="view-all">Reset or view all</button>
+
+            <button id="view-income">view income</button>
+
+            <button id="view-expense">view expense</button>
+          </div>
+          <div class="flex row space-between view">
+            <input type="number" id="priceFilter" placeholder="enter price" />
+            <button id="less-than">More than entered price</button>
+            <button id="greater-than">Less than entered price</button>
+          </div>
+          <div class="flex row space-between view">
+            <input type="date" id="dateFilter" placeholder="Date" />
+            <button id="greater-than-Date">After selected date</button>
+            <button id="less-than-Date">Before selected date</button>
+          </div>
+          <div class="flex row space-between view">
+            <input
+              type="text"
+              id="noteFilter"
+              placeholder="enter search keyword"
+              class="grow1"
+            />
+            <button id="word-find" class="grow4">Find word</button>
+          </div>
+          <button id="budget" class="budget">budget</button>
+        </div>
+      </div>
+      <div id="transactions" class="transactions"></div>
+    </div>
+    <div id="edit" class="editClass"></div>
+
+    <script src="./js/app.js"></script>
+    <script src="./js/API/view.js"></script>
+    <script src="./js/API/filters.js"></script>
+    <script src="./js/API/budget.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/API/create.js"></script>
+    <script src="./js/API/delete.js"></script>
+    <script src="./js/API/edit.js"></script>
+  </body>
+</html>

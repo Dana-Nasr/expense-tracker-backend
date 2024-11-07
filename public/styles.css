@@ -1,0 +1,89 @@
+header {
+  width: 100%;
+  height: 10vh;
+}
+.transaction {
+  margin-top: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+.view {
+  width: 100%;
+}
+.enter > input {
+  width: 50%;
+  padding: 9px;
+  margin: 9px;
+}
+/* General styles */
+div {
+  padding: 0px;
+  padding: 0px;
+}
+.transactions,
+.transaction,
+.transactionContainer {
+  margin: 5px;
+  margin-top: 20px;
+
+  border-radius: 5px;
+
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.transaction {
+  margin-top: 0px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #007bff;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+.budget {
+  margin-top: 20px;
+  background-color: #ffc107;
+}
+
+.budget:hover {
+  background-color: #e0a800;
+}
+
+table td:nth-child(5) > button {
+  background-color: rgb(210, 9, 9);
+  width: 80%;
+}
+table td:nth-child(6) > button {
+  width: 80%;
+}
+.budgetDiv {
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+.editClass > input {
+  width: 18%;
+  border: 2px solid black;
+}
+.editClass > button {
+  width: 18%;
+}

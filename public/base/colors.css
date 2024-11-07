@@ -1,0 +1,21 @@
+.white {
+  color: #ffffff;
+}
+.primary {
+  color: #0078be;
+}
+.bk-primary {
+  background-color: #0078be;
+}
+.bk-white {
+  background-color: #f5f5f5;
+}
+.bk-div-white {
+  background-color: #ffffff;
+}
+.bk-black {
+  background-color: #1f2124;
+}
+.grey {
+  color: #646464;
+}
