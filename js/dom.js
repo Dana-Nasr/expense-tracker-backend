@@ -31,7 +31,6 @@ greaterThan.addEventListener("click", () => {
   let maxprice = document.getElementById("priceFilter").value;
   addGreaterAmountFilter(maxprice);
   lessThan.style.display = "none";
-  
 });
 
 greaterThanDate.addEventListener("click", () => {
@@ -47,7 +46,7 @@ lessThanDate.addEventListener("click", () => {
 });
 
 const viewAll = document.getElementById("view-all");
-viewAll.addEventListener("click", () => {
+viewAll.addEventListener("click", async () => {
   viewIncome.style.display = "inline-block";
   viewExpence.style.display = "inline-block";
   lessThan.style.display = "inline-block";
@@ -55,7 +54,7 @@ viewAll.addEventListener("click", () => {
   greaterThanDate.style.display = "inline-block";
   lessThanDate.style.display = "inline-block";
 
-  transactions = parse();
+  const transactions = await parse();
   viewTransactions(transactions);
 });
 const findWord = document.getElementById("word-find");
