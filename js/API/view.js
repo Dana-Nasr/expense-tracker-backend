@@ -1,6 +1,4 @@
 function viewTransactions(transactions) {
-  console.log("llllllllllllllllllllllllll");
-  console.log(transactions)
   const transactionsTable = document.getElementById("transactions");
   transactionsTable.innerHTML = "";
 
@@ -27,7 +25,11 @@ function viewTransactions(transactions) {
 
     const type = document.createElement("td");
     type.className = "type";
-    type.textContent = transactions[i].type;
+    if (transactions[i].type == 1) {
+      type.textContent = "income";
+    } else {
+      type.textContent = "expance";
+    }
     row.appendChild(type);
 
     const amount = document.createElement("td");

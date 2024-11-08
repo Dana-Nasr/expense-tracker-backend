@@ -4,11 +4,11 @@ async function parse() {
   const id = 1;
   try {
     const response = await fetch(`http://localhost/expense-tracker-backend/php/getTransactions.php`);
-    const transactions = await response.json(); // Wait for the response to be parsed as JSON
-    console.log(transactions);  // Log the transactions
-    return transactions;        // Return the transactions
+    const transactions = await response.json(); 
+    console.log(transactions);  
+    return transactions;        
   } catch (error) {
-    console.log(error);  // Log any errors
+    console.log(error);  
   }
 }
 
