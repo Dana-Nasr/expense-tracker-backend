@@ -31,6 +31,7 @@ greaterThan.addEventListener("click", () => {
   let maxprice = document.getElementById("priceFilter").value;
   addGreaterAmountFilter(maxprice);
   lessThan.style.display = "none";
+  
 });
 
 greaterThanDate.addEventListener("click", () => {

@@ -1,4 +1,6 @@
 function viewTransactions(transactions) {
+  console.log("llllllllllllllllllllllllll");
+  console.log(transactions)
   const transactionsTable = document.getElementById("transactions");
   transactionsTable.innerHTML = "";
 
