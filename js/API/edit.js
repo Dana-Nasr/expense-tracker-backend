@@ -1,8 +1,10 @@
-function editTransaction(editIndex, type1, type2) {
-  let transactions =
-    JSON.parse(localStorage.getItem("transactionsArray")) || []; //change
-
-  let toBEdited = transactions[editIndex];
+async function editTransaction(editIndex, type1, type2) {
+  const transactions = async () => {
+    const result = await parse();
+   
+};
+console.log(transactions());
+  let toBEdited =  transactions();
   let edit = " ";
   edit += `<tr class="edittransaction">
   <td class="type"><input id="Ntype" type="text"  value="${toBEdited.type}" placeholder="Type"/></td>
@@ -14,11 +16,13 @@ function editTransaction(editIndex, type1, type2) {
 
   appendHTML("edit", edit);
   const saveButtons = document.getElementById("save");
-  saveButtons.addEventListener("click", () => save(editIndex, transactions));
+  saveButtons.addEventListener(
+    "click",
+    async () => await save(editIndex, transactions)
+  );
 }
 
-function save(editIndex, transactions) {
-  
+async function save(editIndex, transactions) {
   const type =
     document.getElementById("type").value || transactions[editIndex].type;
   const amount =
@@ -27,7 +31,11 @@ function save(editIndex, transactions) {
     document.getElementById("Ndate").value || transactions[editIndex].date;
   const notes =
     document.getElementById("Nnotes").value || transactions[editIndex].notes;
-
+  if (type == "income") {
+    t = 1;
+  } else if ((type = "expance")) {
+    t = 0;
+  }
   transactions[editIndex] = {
     type: type,
     amount: amount,
@@ -36,8 +44,21 @@ function save(editIndex, transactions) {
   };
   console.log("HELLO");
 
-  localStorage.setItem("transactionsArray", JSON.stringify(transactions));
+  try {
+    const response = await fetch(
+      "http://localhost/expense-tracker-backend/php/createTransaction.php",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(transactions),
+      }
+    );
+  } catch (error) {
+    console.log(error);
+  }
 
   document.getElementById("edit").innerHTML = "";
-  viewTransactions(parse());
+  await viewTransactions(parse());
 }

@@ -78,6 +78,6 @@ function viewTransactions(transactions) {
   editButtons.forEach((btn) => {
     const editIndex = btn.value;
     console.log(editIndex);
-    btn.addEventListener("click", () => editTransaction(editIndex));
+    btn.addEventListener("click", async() => await editTransaction(editIndex));
   });
 }
