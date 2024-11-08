@@ -2,16 +2,18 @@ function calculateTotalBuget() {
   let budget = 0;
   let expense = 0;
   let income = 0;
-  let transactions =
-    JSON.parse(localStorage.getItem("transactionsArray")) || []; //change to query to get incomeamount expance amout and balance
+  const transactionsBudget = async () => {
+    const result = await parse();
+  };
+  let budgets = transactionsBudget();
   for (let i = 0; i < transactions.length; i++) {
-    if (transactions[i].type == "income") {
-      income += parseInt(transactions[i].amount);
+    if (budgets[i].type == "income") {
+      income += parseInt(budgets[i].amount);
       console.log(income);
     }
 
     if (transactions[i].type == "expense") {
-      expense += parseInt(transactions[i].amount);
+      expense += parseInt(budgets[i].amount);
       console.log(expense);
     }
   }
