@@ -70,7 +70,7 @@ function viewTransactions(transactions) {
   const deleteButtons = document.querySelectorAll(".delete");
   deleteButtons.forEach((btn) => {
     const removeIndex = btn.value;
-    btn.addEventListener("click", () => deleteTransaction(removeIndex));
+    btn.addEventListener("click", async() =>await  deleteTransaction(removeIndex));
   });
 
   // Add event listeners for the edit buttons
