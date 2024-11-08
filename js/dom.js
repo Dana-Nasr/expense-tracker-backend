@@ -1,6 +1,6 @@
 const submitIncome = document.getElementById("submit");
-submitIncome.addEventListener("click", () =>
-  createTransaction("type", "date", "amount", "notes")
+submitIncome.addEventListener("click", async() =>
+  await createTransaction("type", "date", "amount", "notes")
 );
 
 const viewIncome = document.getElementById("view-income");
